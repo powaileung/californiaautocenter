@@ -43,6 +43,14 @@
           </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="navbar-brand" href="#">(650)692-5222</a>
       </nav>
+
+      <% if notice.present? %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>  
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>  
+
     <%= yield %>
   </body>
 </html>

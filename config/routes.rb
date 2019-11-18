@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'location', to: 'home#location'
   get 'about_us', to: 'home#about_us'
-  get 'coupons', to: 'home#coupons'
+  get 'special_deals', to: 'home#special_deals'
   get 'shop_tires', to: 'home#shop_tires'
   get 'contact_us', to: 'home#contact_us'
   get 'term', to: 'home#term'

@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   def about_us
   end
 
-  def special_deals
+  def new
   end
 
   def shop_tires

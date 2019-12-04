@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # create custom error pages procedures.
+  config.exceptions_app = self.routes 
+
   config.action_mailer.default_url_options = { host: 'cac-powai-leung.herokuapp.com' }
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -12,7 +15,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]

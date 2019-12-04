@@ -20,26 +20,29 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
             <li class="nav-item active">
-              <a class="nav-link" href="https://cac-powai-leung.herokuapp.com">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://cac-powai-leung.herokuapp.com/location">Location</a>
+              <a class="nav-link" href="location">Location</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://cac-powai-leung.herokuapp.com/about_us">About Us</a>
+              <a class="nav-link" href="about_us">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href=https://cac-powai-leung.herokuapp.com/special_deals>Special Deals</a>
+              <a class="nav-link" href="specialdeals">Special Deals</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="http://www.tirebuyer.com/?account=376572">Shop Tires</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://cac-powai-leung.herokuapp.com/contact_us">Contact Us</a>
+              <a class="nav-link" href="contact_us">Contact Us</a>
             </li>
           </ul>
           <ul class="navbar-nav">
             <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
+              </li>
               <li class="nav-item">
                 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
               </li>
@@ -64,5 +67,10 @@
       <% end %>  
 
     <%= yield %>
+  </div>
+
+  <div id="footer">
+    
+  </div>
   </body>
 </html>

@@ -11,9 +11,6 @@ class HomeController < ApplicationController
   def new
   end
 
-  def shop_tires
-  end  
-
   def contact_us
   end
 

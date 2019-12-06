@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end
   get 'location', to: 'home#location'
   get 'about_us', to: 'home#about_us'
-  get 'shop_tires', to: 'home#shop_tires'
   get 'contact_us', to: 'home#contact_us'
   get 'term', to: 'home#term'
   get 'privacy', to: 'home#privacy'

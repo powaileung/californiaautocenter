@@ -1,1 +1,65 @@
-<h1>Welcome to my Awesome About_us App</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us | California Auto Center</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #f2f2f2;
+  padding: 20px 20px;
+}
+.grid-item1, .grid-item2, .grid-item3, .grid-item4, .grid-item5, .grid-item6, .grid-item7, .grid-item8 {
+  background-color: #e9f6fa;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.grid-item1 {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+.grid-item2, .grid-item4, .grid-item6, .grid-item8 {
+  grid-column: 2 / span 2;
+}
+
+.wsmcccac { text-align: center; }
+
+</style>
+</head>
+<body class="about_us">
+<div class="booyah-box col-10 offset-1">
+<br />
+<h1>About Us</h1>
+
+<b><h3>California Auto Center at Millbrae is a family owned business since 2013.  We had helped our neighborhoods on repair and maintenance of their vehicles.</h3></b>
+
+<br />
+
+<div class="wsmcccac">
+<h2>WHY SO MANY CUSTOMERS CHOOSE CALIFORNIA AUTO CENTER</h2>
+</div>
+
+<div class="grid-container">
+  
+  <div class="grid-item1"><%= image_tag("cac316.jpg", :width=>"400", :height=>"270", :alt=> "California Auto Center Storefront View") %></div>
+  <div class="grid-item2"><b><h3>Professional Services</h3>
+<p>"Our goal is providing the best professional services to our customers."<br /><br />California Auto Center Specializes in Complete European, Japanese, Domestic Auto Repair, Tire Service, Alignment Service, Auto Body Estimate Center to San Francisco Bay Area.  We have our knowledgeable technicians to serve you and the Bay Area communities.</b></p></div><hr /><hr /><hr />
+  <div class="grid-item3"><%= image_tag("millbraestation.jpg", :width=>"400", :height=>"270", :alt=> "Millbrae Bart / Caltrain Station View") %></div> 
+  <div class="grid-item4"><b><h3>Conveniently Location</h3>
+<p>California Auto Center is conveniently located just off the freeway 101 and 280, less than 7 miles from downtown San Mateo and less than 15 miles from downtown San Francisco. We are 3 blocks from the Millbrae BART and CALTRAIN station. For the convenience of our service customers, we offer extended service hours from Monday - Friday at 7:30AM - 6:30PM, Saturday at 8:30AM - 5:30PM.</b></p></div><hr /><hr /><hr />
+  <div class="grid-item5"><%= image_tag("alignment.jpg", :width=>"400", :height=>"270", :alt=> "California Auto Center Alignment Machine View") %></div>
+  <div class="grid-item6"><b><h3>Top Notch Repair and Maintenance Services</h3>
+California Auto Center provides top notch fast, efficient repair and maintenance services.  Plus, our Professional Service Advisors recommend only the services your vehicle needs based on manufacturer guideline.  We will help you keep your vehicle with up to date service, explain to you what your vehicle needs are.  We want make your vehicle to stay "Top Notch" condition. </b></div><hr /><hr /><hr /> 
+  <div class="grid-item7"><%= image_tag("lounge.jpg", :width=>"400", :height=>"270", :alt=> "California Auto Center Customer Lounge View") %></div>
+  <div class="grid-item8"><b> <h3>Convenience and Comfort Location</h3>
+California Auto Center has a wonderful customer lounge.  You can wait for your vehicle while it’s in service. We provide free Wi-Fi Internet access, comfortable seating areas.  Downtown of Millbrae is just walking distance from our location, you can shop, dine, or walk around to the wonderful local business of Millbrae.</b></div> 
+</div>
+</div>
+</body>
+</html>

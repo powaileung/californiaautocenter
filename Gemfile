@@ -71,3 +71,6 @@ end
 
 gem 'simple_form'
 gem 'devise'
+gem 'stripe'
+gem 'figaro'
+gem 'geocoder'

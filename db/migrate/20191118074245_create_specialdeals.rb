@@ -2,7 +2,7 @@ class CreateSpecialdeals < ActiveRecord::Migration[5.2]
   def change
     create_table :specialdeals do |t|
       t.string :title
-      t.decimal :cost
+      t.string :cost
       t.text :description
       t.text :disclaimer
       t.integer :user_id

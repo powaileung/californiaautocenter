@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-sm-4 col-12 text-center">
       <span class="badge badge-default">
-        Special price at <%= number_to_currency @specialdeal.cost %>
+        Special price at $<%= @specialdeal.cost %>.00
       </span>
 
       <% if current_user && current_user == @specialdeal.user %>
@@ -26,7 +26,14 @@
     </div>
 
     <div class="col-sm-4 col-12 text-center">
-      <%= link_to 'Buy', '#', class: 'btn btn-primary btn-large' %>
+        <%= form_tag specialdeal_charges_path(@specialdeal) do %>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description= <%= @specialdeal.title %>
+                  data-amount= <%= @specialdeal.cost %>
+                  data-locale="auto"></script>
+        <% end %>
     </div>
   </div>
 </div>

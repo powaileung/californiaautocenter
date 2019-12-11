@@ -3,8 +3,8 @@ class HomeController < ApplicationController
   end
 
   def location
-  end 
-
+  end
+  
   def about_us
   end
 

@@ -1,5 +1,5 @@
 class Admin::SpecialdealsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @specialdeal = Specialdeal.new
@@ -20,16 +20,28 @@ class Admin::SpecialdealsController < ApplicationController
 
   def edit
     @specialdeal = Specialdeal.find(params[:id])
+
+    if @specialdeal.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
   end
 
   def update
     @specialdeal = Specialdeal.find(params[:id])
+    if @specialdeal.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
+
     @specialdeal.update_attributes(specialdeal_params)
     redirect_to root_path
   end
 
   def destroy
     @specialdeal = Specialdeal.find(params[:id])
+    if @specialdeal.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
+    
     @specialdeal.destroy
     redirect_to root_path
   end

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  resources :locations
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :dashboard, only: [:show]
   root 'home#index'
-  resources :specialdeals, only: [:index, :show]
+  resources :specialdeals, only: [:index, :show] do
+    resources :charges, only: :create
+  end
   namespace :admin do
     resources :specialdeals, only: [:new, :create, :show, :destroy, :update, :edit]
   end

@@ -10,14 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_074245) do
+ActiveRecord::Schema.define(version: 2019_12_10_051709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "charges", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "specialdeal_id"
+    t.integer "cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["specialdeal_id"], name: "index_charges_on_specialdeal_id"
+    t.index ["user_id", "specialdeal_id", "cost"], name: "index_charges_on_user_id_and_specialdeal_id_and_cost"
+  end
+
   create_table "specialdeals", force: :cascade do |t|
     t.string "title"
-    t.decimal "cost"
+    t.string "cost"
     t.text "description"
     t.text "disclaimer"
     t.integer "user_id"

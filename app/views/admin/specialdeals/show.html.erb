@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-sm-4 col-12 text-center">
       <span class="badge badge-default">
-        Special price at $<%= (@specialdeal.cost).to_f / 100 %>
+        Special price at $<%= @specialdeal.cost %>
       </span>
 
       <% if current_user && current_user == @specialdeal.user %>

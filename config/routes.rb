@@ -7,15 +7,12 @@ Rails.application.routes.draw do
   resources :specialdeals, only: [:index, :show] do
     resources :charges, only: :create
   end
-  namespace :contact do 
-    resources :contact, only: [:new, :create]
-  end
+  resources :contact, only: [:index, :new, :create]
   namespace :admin do
     resources :specialdeals, only: [:new, :create, :show, :destroy, :update, :edit]
   end
   get 'location', to: 'home#location'
   get 'about_us', to: 'home#about_us'
-  get 'contact_us', to: 'home#contact_us'
   get 'term', to: 'home#term'
   get 'privacy', to: 'home#privacy'
   get 'career', to: 'home#career'

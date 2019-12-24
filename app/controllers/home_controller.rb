@@ -11,9 +11,6 @@ class HomeController < ApplicationController
   def new
   end
 
-  def contact_us
-  end
-
   def term
   end
 

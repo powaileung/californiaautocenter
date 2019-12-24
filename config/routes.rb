@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :specialdeals, only: [:index, :show] do
     resources :charges, only: :create
   end
+  resources :contacts, only: [:new, :create]
   namespace :admin do
     resources :specialdeals, only: [:new, :create, :show, :destroy, :update, :edit]
   end

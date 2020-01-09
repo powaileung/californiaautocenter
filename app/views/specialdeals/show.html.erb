@@ -1,26 +1,31 @@
 <br />
 
 <div class="booyah-box col-10 offset-1">
-  <h1><%= @specialdeal.title %></h1>
+
+  <h1 class="text-center"><b><%= @specialdeal.title %></b></h1>
+  <hr />
   <br />
-  <div class="row">
-    <div class="col-sm-4 col-12 text-center">
+
+  <div>  
+    <h2 class="text-center">
       <span class="badge badge-default">
-        Special price at $<%= (@specialdeal.cost).to_f / 100 %>
+        Special price at <%= number_to_currency (@specialdeal.cost).to_f / 100 %>
       </span>
-
-      <% if current_user && current_user == @specialdeal.user %>
-        <br />
-        <br />
-        <% link_to 'Administer', admin_specialdeal_path(@specialdeal), class: 'btn btn-danger btn-large' %>
-      <% end %>  
-
+    </h2>
+  </div>
+  <br />
+  
+  <div class="row">
+    <div class="col-sm-6 col-12">
+      <h3><% @specialdeal.images.each do |image| %></h3>
+      <% end %>
     </div>
-
-    <div class="col-sm-8 col-12">
-      <%= @specialdeal.description %>
+    <div class="col-sm-6 col-12">
+      <h3><%= @specialdeal.description %></h3>
     </div>
+  </div><br />
 
+  <div class="row">
     <div class="col-sm-8 col-12">
       <%= @specialdeal.disclaimer %>
     </div>
@@ -35,5 +40,12 @@
                   data-locale="auto"></script>
         <% end %>
     </div>
+  </div>
+
+  <div class="text-center">
+    <% if current_user && current_user == @specialdeal.user %>
+    <br />
+        <%= link_to 'Administer', admin_specialdeal_path(@specialdeal), class: 'btn btn-danger btn-large' %>
+    <% end %> 
   </div>
 </div>

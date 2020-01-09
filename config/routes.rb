@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :contact, only: [:index, :new, :create]
   namespace :admin do
     resources :specialdeals, only: [:new, :create, :show, :destroy, :update, :edit]
+    resources :images, only: :create
   end
   get 'location', to: 'home#location'
   get 'about_us', to: 'home#about_us'

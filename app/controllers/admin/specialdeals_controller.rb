@@ -16,6 +16,7 @@ class Admin::SpecialdealsController < ApplicationController
 
   def show
     @specialdeal = Specialdeal.find(params[:id])
+    @image = Image.new
   end
 
   def edit

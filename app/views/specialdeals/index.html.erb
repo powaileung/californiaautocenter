@@ -1,27 +1,31 @@
 <br />
 
 <div class="booyah-box col-10 offset-1">
-  <h1 class="text-center">Member Special Deals</h1>
+  <h1 class="text-center"><b>Member Special Deals</b></h1>
   <hr />
 
-  <%@specialdeals.each do |specialdeal| %>
+  <% @specialdeals.each do |specialdeal| %>
     <h2 class="text-center">
       <%= specialdeal.title %></h2>
     <br />
+
+    <h2 class="text-center">
+      <span class="badge badge-default">
+        Special price at <%= number_to_currency (specialdeal.cost).to_f / 100 %>
+      </span> 
+    </h2>
+
+    <br />
     <div class="row">
-    <div class="col-sm-8 col-12">
-      $<%= (specialdeal.cost).to_f / 100 %>
-    </div>
     <div class="col-sm-8 col-12">
       <%= specialdeal.description %>
     </div>
-    <div class="col-sm-8 col-12">
-      <%= specialdeal.disclaimer %>
-    </div>
+    
     <div class="col-sm-4 col-12 text-center">
       <%= link_to 'More Details', specialdeal_path(specialdeal), class: 'btn btn-primary btn-large' %>
     </div>
   </div>
   <br class="clr" />
+  <hr />
   <% end %>  
 </div>
